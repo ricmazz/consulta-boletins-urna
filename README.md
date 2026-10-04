@@ -75,10 +75,17 @@ Tudo vai para `saida/sp-61557/` (ou a pasta indicada em `--out`):
 | `votos.csv` | Uma linha por voto registrado em cada seção: bairro, cargo, tipo (nominal, legenda, branco, nulo), número, partido, candidato e quantidade. |
 | `bairros.csv` | Votos por cargo, bairro e candidato, com o percentual sobre os válidos do bairro. |
 | `resumo.csv` | Soma de todas as seções coletadas por cargo e candidato, com o percentual sobre os válidos. |
+| `paises.csv` | Só no exterior (`--uf zz`): a mesma soma do `resumo.csv`, separada por país. |
 | `estado.json` | Estado da coleta (seções já baixadas e pendentes). Permite retomar sem baixar tudo de novo. |
 | `bu/<uf>/<município>/*.bu.dat` | Arquivos originais dos BUs, como publicados pelo TSE (omitidos com `--sem-bu`). |
 
 Os CSVs usam `;` como separador e UTF-8 com BOM, então abrem direto no Excel em português. O painel também tem links para baixá-los.
+
+## Exterior
+
+Com `--uf zz`, o painel não tem mapa, mas ganha uma tabela **Por país** (cidades, seções, votantes, comparecimento e mais votados). Clicar num país filtra a tabela de cidades. Também é gerado o `paises.csv`.
+
+O TSE não informa o país das cidades do exterior, só o nome da cidade. O script traz uma tabela cidade → país (`PAISES_EXTERIOR`) com as 186 cidades de 2026; uma cidade que não estiver nela aparece como "Não identificado".
 
 ## Outros municípios
 

@@ -26,6 +26,44 @@ const AMBIENTES = {
 const CARGOS = { 1: "Presidente", 3: "Governador", 5: "Senador", 6: "Deputado Federal", 7: "Deputado Estadual", 8: "Deputado Distrital", 25: "Conselheiro Distrital" };
 const TIPO_VOTO = { 1: "nominal", 2: "branco", 3: "nulo", 4: "legenda" };
 
+// O TSE não informa o país das cidades do exterior (UF "zz"), só o nome. Tabela montada a partir da
+// lista de 2026; cidade que não estiver aqui aparece como "Não identificado".
+const PAISES_EXTERIOR = {
+  "África do Sul": ["CIDADE DO CABO", "PRETÓRIA"], "Albânia": ["TIRANA"], "Alemanha": ["BERLIM", "FRANKFURT", "MUNIQUE"],
+  "Angola": ["LUANDA"], "Antígua e Barbuda": ["SAINT JOHNS"], "Arábia Saudita": ["RIADE"], "Argélia": ["ARGEL"],
+  "Argentina": ["BUENOS AIRES", "CÓRDOBA", "MENDOZA", "PASO LOS LIBRES", "PUERTO IGUAZÚ"], "Armênia": ["IEREVAN"],
+  "Austrália": ["CAMBERRA", "SYDNEY"], "Áustria": ["VIENA"], "Azerbaijão": ["BAKU"], "Bahamas": ["NASSAU"], "Bahrein": ["BAREIN"],
+  "Bangladesh": ["DACCA"], "Barbados": ["BRIDGETOWN"], "Bélgica": ["BRUXELAS"], "Belize": ["BELMOPAN"], "Benin": ["COTONOU"],
+  "Bolívia": ["COBIJA", "COCHABAMBA", "LA PAZ", "PUERTO QUIJARRO", "SANTA CRUZ DE LA SIERRA"], "Bósnia e Herzegovina": ["SARAJEVO"],
+  "Botsuana": ["GABORONE"], "Bulgária": ["SÓFIA"], "Burkina Faso": ["UAGADUGU"], "Cabo Verde": ["PRAIA"], "Camarões": ["IAUNDÊ"],
+  "Canadá": ["MONTREAL", "OTTAWA", "TORONTO", "VANCOUVER"], "Catar": ["DOHA"], "Cazaquistão": ["ASTANA"], "Chile": ["SANTIAGO"],
+  "China": ["CANTÃO", "HONG KONG", "PEQUIM", "XANGAI"], "Chipre": ["NICOSIA"], "Colômbia": ["BOGOTÁ"], "Congo": ["BRAZZAVILLE"],
+  "Coreia do Norte": ["PYONGYANG"], "Coreia do Sul": ["SEUL"], "Costa do Marfim": ["ABIDJÃ"], "Costa Rica": ["SÃO JOSÉ"],
+  "Croácia": ["ZAGREB"], "Cuba": ["HAVANA"], "Dinamarca": ["COPENHAGUE"], "Egito": ["CAIRO"], "El Salvador": ["SÃO SALVADOR"],
+  "Emirados Árabes Unidos": ["ABU DHABI"], "Equador": ["QUITO"], "Eslováquia": ["BRATISLAVA"], "Eslovênia": ["LIUBLIANA"],
+  "Espanha": ["BARCELONA", "MADRI"], "Estados Unidos": ["ATLANTA", "BOSTON", "CHICAGO", "HARTFORD", "HOUSTON", "LOS ANGELES", "MIAMI", "NOVA YORK", "ORLANDO", "SÃO FRANCISCO", "WASHINGTON"],
+  "Estônia": ["TALIN"], "Etiópia": ["ADIS ABEBA"], "Filipinas": ["MANILA"], "Finlândia": ["HELSINQUE"],
+  "França": ["CAIENA", "MARSELHA", "PARIS", "ST GEORGES DE LOYAPOCK"], "Gabão": ["LIBREVILLE"], "Gana": ["ACCRA"], "Geórgia": ["TBILISI"],
+  "Grécia": ["ATENAS"], "Guatemala": ["GUATEMALA"], "Guiana": ["GEORGETOWN"], "Guiné": ["CONACRI"], "Guiné Equatorial": ["MALABO"],
+  "Guiné-Bissau": ["BISSAU"], "Haiti": ["PORTO PRÍNCIPE"], "Honduras": ["TEGUCIGALPA"], "Hungria": ["BUDAPESTE"], "Índia": ["MUMBAI", "NOVA DELHI"],
+  "Indonésia": ["JACARTA"], "Irã": ["TEERÃ"], "Iraque": ["BAGDÁ"], "Irlanda": ["DUBLIN"], "Israel": ["TEL AVIV"], "Itália": ["MILÃO", "ROMA"],
+  "Jamaica": ["KINGSTON-JAMAICA"], "Japão": ["HAMAMATSU", "NAGÓIA", "TÓQUIO"], "Jordânia": ["AMÃ"], "Kuwait": ["KUAITE"], "Líbano": ["BEIRUTE"],
+  "Líbia": ["TRÍPOLI"], "Malásia": ["KUALA LUMPUR"], "Malawi": ["LILONGUE"], "Mali": ["BAMAKO"], "Marrocos": ["RABAT"], "México": ["MEXICO"],
+  "Mianmar": ["YANGON"], "Moçambique": ["MAPUTO"], "Namíbia": ["WINDHOEK"], "Nepal": ["KATMANDU"], "Nicarágua": ["MANÁGUA"], "Nigéria": ["ABUJA", "LAGOS"],
+  "Noruega": ["OSLO"], "Nova Zelândia": ["WELLINGTON"], "Omã": ["MASCATE"], "Países Baixos": ["AMSTERDÃ"], "Palestina": ["RAMALLAH"], "Panamá": ["PANAMA"],
+  "Paquistão": ["ISLAMABADE"], "Paraguai": ["ASSUNÇÃO", "CIUDAD DEL ESTE", "CONCEPCIÓN", "ENCARNACIÓN", "PEDRO JUAN CABALLERO", "SALTO DEL GUAIRÁ"],
+  "Peru": ["IQUITOS", "LIMA"], "Polônia": ["VARSÓVIA"], "Portugal": ["FARO", "LISBOA", "PORTO"], "Quênia": ["NAIRÓBI"], "Reino Unido": ["EDIMBURGO", "LONDRES"],
+  "República Democrática do Congo": ["KINSHASA"], "República Dominicana": ["SÃO DOMINGOS"], "Romênia": ["BUCARESTE"], "Rússia": ["MOSCOU"],
+  "Santa Lúcia": ["CASTRIES"], "São Tomé e Príncipe": ["SÃO TOMÉ"], "Senegal": ["DACAR"], "Sérvia": ["BELGRADO"], "Singapura": ["SINGAPURA"],
+  "Síria": ["DAMASCO"], "Sri Lanka": ["COLOMBO"], "Suécia": ["ESTOCOLMO"], "Suíça": ["GENEBRA", "ZURIQUE"], "Suriname": ["PARAMARIBO"],
+  "Tailândia": ["BANGKOK"], "Taiwan": ["TAIPÉ"], "Tanzânia": ["DAR ES SALAAM"], "Tchéquia": ["PRAGA"], "Timor-Leste": ["DÍLI"], "Togo": ["LOMÉ"],
+  "Trinidad e Tobago": ["PORT OF SPAIN"], "Tunísia": ["TUNIS"], "Turquia": ["ANCARA", "ISTAMBUL"], "Ucrânia": ["KIEV"],
+  "Uruguai": ["ARTIGAS", "CHUY", "MONTEVIDÉU", "RIO BRANCO", "RIVERA"], "Venezuela": ["CARACAS", "CIUDAD GUAYANA", "SANTA ELENA DE UAIRÉN"],
+  "Vietnã": ["HANÓI"], "Zâmbia": ["LUSACA"], "Zimbábue": ["HARARE"],
+};
+const PAIS_DA_CIDADE = Object.fromEntries(Object.entries(PAISES_EXTERIOR).flatMap(([p, cs]) => cs.map(c => [c, p])));
+const paisDe = nome => PAIS_DA_CIDADE[String(nome || "").toUpperCase()] || "Não identificado";
+
 const AJUDA = `
 Coletor de Boletins de Urna - Eleições 2026
 
@@ -277,11 +315,14 @@ async function gerarCSVs(listaSecoes = []) {
   const votos = [["uf", "cod_municipio", "municipio", "zona", "secao", "bairro", "cargo", "tipo_voto", "numero", "partido", "candidato", "votos"]];
   const soma = {}; // cargo -> chave -> {chave, tipo, numero, partido, nome, votos}
   const compar = {};
+  const EXTERIOR = UF === "zz";
+  const somaPais = {}; // só no exterior: país -> cargo -> chave -> {numero, partido, nome, tipo, votos}
 
   for (const [k, e] of Object.entries(estado)) {
     if (!e.bu || !noEscopo.has(k)) continue; // a pasta de saída pode ter seções de outra coleta
     const [mun, zona, secao] = k.split("-");
     const munNome = nomesMun[mun] || "";
+    const pais = EXTERIOR ? paisDe(munNome) : null;
     const loc = locais[localDaSecao[k]];
     const bairro = loc?.bairro || "";
     const cargos = e.bu.eleicoes.flatMap(x => x.cargos.map(c => ({ ...c, aptos: x.aptos })));
@@ -307,6 +348,7 @@ async function gerarCSVs(listaSecoes = []) {
         const chave = `${tipo}|${numero}`;
         (soma[cargoNome] ??= {})[chave] ??= { chave, tipo, numero, partido, nome, votos: 0 };
         soma[cargoNome][chave].votos += v.qtd;
+        if (pais) (((somaPais[pais] ??= {})[cargoNome] ??= {})[chave] ??= { tipo, numero, partido, nome, votos: 0 }).votos += v.qtd;
         if (bairro) {
           const b = (porBairro[cargoNome] ??= {})[bairro] ??= { validos: 0, itens: {} };
           (b.itens[chave] ??= { tipo, numero, partido, nome, votos: 0 }).votos += v.qtd;
@@ -349,6 +391,17 @@ async function gerarCSVs(listaSecoes = []) {
   await writeFile(join(OUT, "votos.csv"), csv(votos));
   await writeFile(join(OUT, "resumo.csv"), csv(resumo));
   if (Object.keys(locais).length) await writeFile(join(OUT, "bairros.csv"), csv(bairros));
+  if (EXTERIOR) {
+    const paises = [["pais", "cargo", "tipo_voto", "numero", "partido", "candidato", "votos", "percentual_validos"]];
+    for (const pais of Object.keys(somaPais).sort((a, b) => a.localeCompare(b, "pt-BR")))
+      for (const [cargo, itens] of Object.entries(somaPais[pais])) {
+        const l = Object.values(itens).sort((a, b) => b.votos - a.votos);
+        const validos = l.filter(x => valido(x.tipo)).reduce((s, x) => s + x.votos, 0);
+        for (const x of l) paises.push([pais, cargo, x.tipo, x.numero, x.partido, x.nome, x.votos,
+          valido(x.tipo) && validos ? (x.votos / validos * 100).toFixed(2).replace(".", ",") : ""]);
+      }
+    await writeFile(join(OUT, "paises.csv"), csv(paises));
+  }
 
   // lista completa por cargo: candidatos com votos + os que ainda não receberam nenhum
   const ordem = [...CARGOS_UF.map(c => CARGOS[c]), ...Object.keys(soma).filter(c => !CARGOS_UF.some(x => CARGOS[x] === c))];
@@ -365,18 +418,33 @@ async function gerarCSVs(listaSecoes = []) {
   detalhe = { cargos, geo, porLocal };
 
   const cargoPrincipal = ordem.find(c => soma[c]);
+  const topDe = (votos, val) => Object.entries(votos || {}).sort((a, b) => b[1] - a[1]).slice(0, 3).map(([nome, v]) => ({ nome, votos: v, pct: val ? v / val * 100 : 0 }));
+  const municipios = Object.keys(totalPorMun).map(cd => {
+    const pm = porMun[cd] || { coletadas: 0, aptos: 0, votantes: 0, votos: {}, validos: {} };
+    return { cd, nome: nomesMun[cd] || cd, pais: EXTERIOR ? paisDe(nomesMun[cd]) : undefined, total: totalPorMun[cd], coletadas: pm.coletadas,
+      aptos: pm.aptos, votantes: pm.votantes, top: cargoPrincipal ? topDe(pm.votos[cargoPrincipal], pm.validos[cargoPrincipal]) : [] };
+  });
+  // Por país: soma das cidades do exterior (o "Mais votados" usa o cargo principal, como na tabela de cidades)
+  let paisesPainel = null;
+  if (EXTERIOR) {
+    const pp = {};
+    for (const m of municipios) {
+      const p = pp[m.pais] ??= { nome: m.pais, cidades: 0, total: 0, coletadas: 0, aptos: 0, votantes: 0, votos: {}, validos: 0 };
+      p.cidades++; p.total += m.total; p.coletadas += m.coletadas; p.aptos += m.aptos; p.votantes += m.votantes;
+      const pm = porMun[m.cd];
+      if (pm && cargoPrincipal) {
+        for (const [rot, v] of Object.entries(pm.votos[cargoPrincipal] || {})) p.votos[rot] = (p.votos[rot] || 0) + v;
+        p.validos += pm.validos[cargoPrincipal] || 0;
+      }
+    }
+    paisesPainel = Object.values(pp).map(({ votos, validos, ...p }) => ({ ...p, top: topDe(votos, validos) }));
+  }
   painel = {
     uf: UF, ambiente: opt.ambiente || "oficial", atualizado: new Date().toISOString(),
     titulo: FILTRO_MUN && FILTRO_MUN.size === 1 ? nomesMun[[...FILTRO_MUN][0]] || null : null,
     total: listaSecoes.length, coletadas: secoes.length - 1, cargoPrincipal: cargoPrincipal || null, temMapa: Object.keys(locais).length > 0,
     cargos: Object.values(cargos).map(({ itens, ...c }) => ({ ...c, candidatos: itens.filter(x => x.tipo === "nominal").length, top: itens.filter(x => valido(x.tipo)).slice(0, 3) })),
-    municipios: Object.keys(totalPorMun).map(cd => {
-      const pm = porMun[cd] || { coletadas: 0, aptos: 0, votantes: 0, votos: {}, validos: {} };
-      const vs = cargoPrincipal ? Object.entries(pm.votos[cargoPrincipal] || {}).sort((a, b) => b[1] - a[1]) : [];
-      const val = cargoPrincipal ? pm.validos[cargoPrincipal] || 0 : 0;
-      return { cd, nome: nomesMun[cd] || cd, total: totalPorMun[cd], coletadas: pm.coletadas, aptos: pm.aptos, votantes: pm.votantes,
-        top: vs.slice(0, 3).map(([nome, v]) => ({ nome, votos: v, pct: val ? v / val * 100 : 0 })) };
-    }),
+    municipios, paises: paisesPainel,
     locais: Object.values(locais).map(l => ({ id: l.id, nome: l.nome, bairro: l.bairro, secoes: l.secoes, ...(porLocal[l.id] || { coletadas: 0, aptos: 0, votantes: 0 }) })),
     secoes: listaPainel,
   };
@@ -448,7 +516,7 @@ async function main() {
     progresso.ultimoCiclo = new Date().toISOString();
     console.log(`\n[${agora()}] Ciclo em ${((Date.now() - t0) / 1000).toFixed(0)}s · ${c.novo} BUs novos · ${nSecoes} de ${tot} seções coletadas (${(nSecoes / tot * 100).toFixed(1)}%) · ${c.pendente} ainda sem BU`);
     if (linhasConsole.length) console.log(linhasConsole.join("\n"));
-    console.log(`CSVs atualizados em ${OUT} (secoes.csv, votos.csv, resumo.csv${nLocais ? ", bairros.csv" : ""})`);
+    console.log(`CSVs atualizados em ${OUT} (secoes.csv, votos.csv, resumo.csv${nLocais ? ", bairros.csv" : ""}${UF === "zz" ? ", paises.csv" : ""})`);
     if (nSecoes >= tot) { progresso.fase = "concluido"; console.log("Todas as seções do escopo foram coletadas."); break; }
     if (!LOOP) { progresso.fase = "parado"; break; }
     progresso.fase = "aguardando";
@@ -493,7 +561,7 @@ function iniciarServidor() {
         return json({ mun, nome: nomesMun[mun] || mun, zona, secao, local: loc ? { nome: loc.nome, endereco: loc.endereco, bairro: loc.bairro } : null, info: e.bu.info, hash: e.hash, arquivo: e.arquivo, recebido: e.recebido, agregadas: e.agregadas, cargos });
       }
       const arq = url.pathname.slice(1);
-      if (["secoes.csv", "votos.csv", "resumo.csv", "bairros.csv"].includes(arq) && existsSync(join(OUT, arq))) {
+      if (["secoes.csv", "votos.csv", "resumo.csv", "bairros.csv", "paises.csv"].includes(arq) && existsSync(join(OUT, arq))) {
         res.writeHead(200, { "content-type": tipos[".csv"], "content-disposition": `attachment; filename="${UF}-${arq}"` });
         return res.end(await readFile(join(OUT, arq)));
       }
@@ -576,7 +644,7 @@ button:focus-visible,input:focus-visible,tr:focus-visible{outline:2px solid var(
 .nota{font-size:.8rem;color:var(--muted);margin:0}
 </style></head><body><div class="wrap">
 <div class="top"><div><h1 id="titulo">Apuração</h1><p class="sub" id="sub">Carregando…</p></div>
-<div class="dl" id="dl"><a href="/resumo.csv">resumo.csv</a><a href="/secoes.csv">secoes.csv</a><a href="/votos.csv">votos.csv</a></div></div>
+<div class="dl" id="dl"><a href="/resumo.csv">resumo.csv</a><a href="/secoes.csv">secoes.csv</a><a href="/votos.csv">votos.csv</a><a href="/paises.csv" id="dl-paises" hidden>paises.csv</a></div></div>
 
 <section class="card">
   <div class="prog-top"><span><span class="big" id="pct">0%</span> das seções com BU coletado</span><span id="estado"></span></div>
@@ -604,6 +672,11 @@ button:focus-visible,input:focus-visible,tr:focus-visible{outline:2px solid var(
   <div class="tbl"><table><thead><tr><th>Bairro</th><th style="text-align:right">Locais</th><th style="text-align:right">Seções</th><th style="text-align:right">Votos</th><th style="text-align:right">% válidos</th><th></th></tr></thead><tbody id="bairros"></tbody></table></div>
 </section>
 
+<section class="card" id="card-paises" hidden>
+  <div class="prog-top" style="align-items:center"><h2>Por país</h2><span id="paises-info"></span></div>
+  <div class="tbl"><table><thead><tr><th>País</th><th style="text-align:right">Cidades</th><th style="text-align:right">Seções</th><th style="text-align:right">Votantes</th><th style="text-align:right">Comparec.</th><th id="th-top-pais">Mais votados</th></tr></thead><tbody id="paises"></tbody></table></div>
+</section>
+
 <section class="card">
   <div class="prog-top" style="align-items:center"><h2 id="h-lista">Locais de votação</h2><input type="search" id="busca" placeholder="Filtrar por nome ou bairro…" aria-label="Filtrar" style="width:min(100%,300px)"></div>
   <div class="tbl"><table><thead id="thead-lista"></thead><tbody id="lista"></tbody></table></div>
@@ -622,7 +695,8 @@ const curto = c => c.replace("Deputado ", "Dep. ");
 const valido = t => t === "nominal" || t === "legenda";
 const rotulo = x => x.tipo === "legenda" ? "Legenda " + (x.partido || x.numero) : x.tipo === "branco" ? "Brancos" : x.tipo === "nulo" ? "Nulos" : (x.nome || "Candidato " + x.numero);
 let dados = null, versao = null, cargoSel = null, chaveSel = null, cargoDados = null, mapaDados = null, medida = "votos", limite = 25;
-let selSel = null, secSel = null; // item aberto na lista de locais/municípios e seção aberta
+let selSel = null, secSel = null, paisSel = null; // item aberto na lista de locais/municípios, seção aberta e país filtrado (exterior)
+const linhaTop = top => '<div class="mini">' + (top.length ? top.map(t => '<span><i class="mbar" style="width:' + Math.max(2, t.pct * .6) + 'px"></i>' + esc(t.nome) + ' <b class="mono">' + pct(t.pct) + "</b></span>").join("") : '<span class="empty">sem BU ainda</span>') + "</div>";
 
 function renderTopo(d){
   const p = d.progresso || {};
@@ -647,7 +721,7 @@ function renderTopo(d){
   document.getElementById("card-mapa").hidden = !d.temMapa;
   document.getElementById("card-bairros").hidden = !d.temMapa;
   document.querySelector(".split").classList.toggle("sem-mapa", !d.temMapa);
-  document.getElementById("busca").placeholder = d.temMapa ? "Filtrar por nome ou bairro…" : "Filtrar por nome…";
+  document.getElementById("busca").placeholder = d.temMapa ? "Filtrar por nome ou bairro…" : d.uf === "zz" ? "Filtrar por cidade ou país…" : "Filtrar por nome…";
 }
 
 // ---------------------------------------------------------------- cargos e candidatos
@@ -778,11 +852,24 @@ function focarBairro(nome){
   document.getElementById("card-mapa").scrollIntoView({behavior: "smooth", block: "nearest"});
 }
 
+// ---------------------------------------------------------------- países (só no exterior)
+function renderPaises(d){
+  const tem = !!(d.paises && d.paises.length);
+  document.getElementById("card-paises").hidden = !tem; document.getElementById("dl-paises").hidden = !tem;
+  if (!tem) return;
+  document.getElementById("th-top-pais").textContent = d.cargoPrincipal ? "Mais votados · " + d.cargoPrincipal : "Mais votados";
+  document.getElementById("paises-info").textContent = d.paises.length + " países · clique para ver as cidades";
+  const ps = [...d.paises].sort((a, b) => b.votantes - a.votantes || b.coletadas - a.coletadas || a.nome.localeCompare(b.nome, "pt-BR"));
+  document.getElementById("paises").innerHTML = ps.map(p => '<tr class="click' + (p.nome === paisSel ? " sel" : "") + '" tabindex="0" data-pais="' + esc(p.nome) + '"><td>' + esc(p.nome) +
+    '</td><td class="n">' + p.cidades + '</td><td class="n">' + p.coletadas + "/" + p.total + '</td><td class="n">' + fmt(p.votantes) + '</td><td class="n">' + (p.aptos ? pct(p.votantes / p.aptos * 100) : "–") +
+    "</td><td>" + linhaTop(p.top) + "</td></tr>").join("");
+}
+
 // ---------------------------------------------------------------- locais de votação (ou municípios) e BUs
 function renderLista(d){
   const q = document.getElementById("busca").value.trim().toLowerCase();
   const porLocal = d.temMapa;
-  document.getElementById("h-lista").textContent = porLocal ? "Locais de votação" : d.uf === "zz" ? "Por cidade no exterior" : "Por município";
+  document.getElementById("h-lista").textContent = porLocal ? "Locais de votação" : d.uf === "zz" ? (paisSel ? "Cidades · " + paisSel : "Por cidade no exterior") : "Por município";
   document.getElementById("thead-lista").innerHTML = porLocal
     ? '<tr><th>Local</th><th>Bairro</th><th style="text-align:right">Seções</th><th style="text-align:right">Votantes</th><th style="text-align:right">Comparec.</th></tr>'
     : '<tr><th>Município / cidade</th><th style="text-align:right">Seções</th><th style="text-align:right">Votantes</th><th style="text-align:right">Comparec.</th><th>Mais votados' + (d.cargoPrincipal ? " · " + esc(d.cargoPrincipal) : "") + "</th></tr>";
@@ -793,12 +880,12 @@ function renderLista(d){
     html = ls.map(l => '<tr class="click' + (l.id === selSel ? " sel" : "") + '" tabindex="0" data-sel="' + l.id + '"><td>' + esc(tcLocal(l.nome)) + "</td><td>" + esc(tc(l.bairro)) +
       '</td><td class="n">' + l.coletadas + "/" + l.secoes + '</td><td class="n">' + fmt(l.votantes) + '</td><td class="n">' + (l.aptos ? pct(l.votantes / l.aptos * 100) : "–") + "</td></tr>").join("");
   } else {
-    const ms = d.municipios.filter(m => !q || m.nome.toLowerCase().includes(q))
+    const ms = d.municipios.filter(m => (!paisSel || m.pais === paisSel) && (!q || m.nome.toLowerCase().includes(q) || (m.pais || "").toLowerCase().includes(q)))
       .sort((a, b) => b.coletadas - a.coletadas || b.votantes - a.votantes || a.nome.localeCompare(b.nome, "pt-BR"));
     html = ms.map(m => '<tr class="click' + (m.cd === selSel ? " sel" : "") + '" tabindex="0" data-sel="' + m.cd + '"><td>' + esc(tc(m.nome)) +
+      (m.pais && !paisSel ? ' <span class="pt" style="color:var(--muted);font-size:.8rem">' + esc(m.pais) + "</span>" : "") +
       '</td><td class="n">' + m.coletadas + "/" + m.total + '</td><td class="n">' + fmt(m.votantes) + '</td><td class="n">' + (m.aptos ? pct(m.votantes / m.aptos * 100) : "–") +
-      '</td><td><div class="mini">' + (m.top.length ? m.top.map(t => '<span><i class="mbar" style="width:' + Math.max(2, t.pct * .6) + 'px"></i>' + esc(t.nome) + ' <b class="mono">' + pct(t.pct) + "</b></span>").join("") : '<span class="empty">sem BU ainda</span>') +
-      "</div></td></tr>").join("");
+      "</td><td>" + linhaTop(m.top) + "</td></tr>").join("");
   }
   document.getElementById("lista").innerHTML = html || '<tr><td colspan="5" class="empty">Nenhum resultado para o filtro.</td></tr>';
 }
@@ -840,7 +927,7 @@ async function atualizar(){
   try{
     const r = await fetch("/api/painel", {cache: "no-store"}); dados = await r.json();
     if (!dados || !dados.cargos) return;
-    renderTopo(dados); renderLista(dados);
+    renderTopo(dados); renderPaises(dados); renderLista(dados);
     if (dados.atualizado !== versao){
       const primeira = versao === null; versao = dados.atualizado;
       renderTabs(dados); await carregarCargo();
@@ -873,6 +960,15 @@ const tbB = document.getElementById("bairros");
 tbB.addEventListener("click", e => { const tr = e.target.closest("tr[data-bairro]"); if (tr) focarBairro(tr.dataset.bairro); });
 tbB.addEventListener("keydown", e => { if (e.key === "Enter"){ const tr = e.target.closest("tr[data-bairro]"); if (tr) focarBairro(tr.dataset.bairro); } });
 document.getElementById("busca").addEventListener("input", () => dados && renderLista(dados));
+function abrirPais(nome){
+  paisSel = paisSel === nome ? null : nome;
+  if (selSel && paisSel && (dados.municipios.find(m => m.cd === selSel) || {}).pais !== paisSel){ selSel = null; secSel = null; renderDet(); }
+  renderPaises(dados); renderLista(dados);
+  if (paisSel) document.getElementById("h-lista").scrollIntoView({behavior: "smooth", block: "start"});
+}
+const tbP = document.getElementById("paises");
+tbP.addEventListener("click", e => { const tr = e.target.closest("tr[data-pais]"); if (tr) abrirPais(tr.dataset.pais); });
+tbP.addEventListener("keydown", e => { if (e.key === "Enter"){ const tr = e.target.closest("tr[data-pais]"); if (tr) abrirPais(tr.dataset.pais); } });
 function abrir(id){ selSel = selSel === id ? null : id; secSel = null; renderLista(dados); renderDet(); }
 const tbL = document.getElementById("lista");
 tbL.addEventListener("click", e => { const tr = e.target.closest("tr[data-sel]"); if (tr) abrir(tr.dataset.sel); });
