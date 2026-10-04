@@ -51,6 +51,7 @@ Tudo vai para a pasta `saida-bu/` (ou a indicada em `--out`):
 | `secoes.csv` | Uma linha por seção coletada: município, zona, seção, local, aptos, comparecimento, abstenção, horários de abertura/encerramento/emissão do BU, recebimento no TSE, situação, nome do arquivo e hash. |
 | `votos.csv` | Uma linha por voto registrado em cada seção: cargo, tipo (nominal, legenda, branco, nulo), número, partido, candidato e quantidade. |
 | `resumo.csv` | Soma de todas as seções coletadas por cargo e candidato, com o percentual sobre os votos válidos. |
+| `paises.csv` | Só no exterior (`--uf zz`): a mesma soma do `resumo.csv`, separada por país. |
 | `estado.json` | Estado da coleta (seções já baixadas e pendentes). Permite retomar sem baixar tudo de novo. |
 | `bu/<uf>/<município>/*.bu.dat` | Arquivos originais dos BUs, como publicados pelo TSE (omitidos com `--sem-bu`). |
 
@@ -64,9 +65,12 @@ Com `--web`, o script sobe um servidor local em `http://localhost:3000` que most
 
 - progresso da coleta (seções coletadas / total) e status do próximo ciclo;
 - totais por cargo, com percentual dos votos válidos;
+- no exterior, tabela por país (cidades, seções, votantes, comparecimento e mais votados); clicar num país filtra a tabela de cidades;
 - tabela por município, com os mais votados no cargo principal;
 - detalhes de cada seção (votos por cargo, horários e hash do BU);
-- links para baixar `resumo.csv`, `secoes.csv` e `votos.csv`.
+- links para baixar `resumo.csv`, `secoes.csv` e `votos.csv` (e `paises.csv` no exterior).
+
+O TSE não informa o país das cidades do exterior, só o nome da cidade. O script traz uma tabela cidade → país (`PAISES_EXTERIOR`) com as 186 cidades de 2026; uma cidade que não estiver nela aparece como "Não identificado".
 
 Se a porta estiver ocupada, use `--porta 3001` (ou outra).
 
