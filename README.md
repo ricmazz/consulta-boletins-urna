@@ -1,74 +1,97 @@
-# Coletor de Boletins de Urna — Eleições 2026
+# Apuração de Araçatuba por bairro — Eleições 2026
 
-Script em Node.js que baixa os **Boletins de Urna (BU)** do 1º turno das Eleições 2026 direto dos arquivos públicos do TSE (`resultados.tse.jus.br`), decodifica os arquivos binários (ASN.1/DER) e gera planilhas CSV por seção, por voto e um resumo por candidato. Opcionalmente, abre um painel local no navegador para acompanhar a apuração seção a seção.
+Script em Node.js que baixa os **Boletins de Urna (BU)** do 1º turno das Eleições 2026 direto dos arquivos públicos do TSE (`resultados.tse.jus.br`), decodifica os arquivos binários (ASN.1/DER) e agrupa os votos de **Araçatuba (SP)** por local de votação e por bairro.
 
-É um único arquivo (`coletar-bus.mjs`), sem dependências.
+O painel local mostra:
+
+- **Candidatos por cargo:** Presidente, Governador, Senador, Deputado Federal e Deputado Estadual, com ranking, busca por nome, número ou partido, brancos e nulos.
+- **Mapa de calor de Araçatuba:** mostra onde o candidato escolhido teve mais votos, com um ponto em cada local de votação.
+- **Tabela por bairro:** votos e percentual do candidato em cada bairro.
+- **Locais de votação:** seções de cada escola, com o BU de cada uma.
+
+Os dados também saem em planilhas CSV. O coletor ainda funciona para qualquer UF ou município, mas o mapa só aparece onde existe o arquivo de locais (veja [Outros municípios](#outros-municípios)).
 
 ## Requisitos
 
-- Node.js 18 ou superior (usa o `fetch` nativo)
+- Node.js 18 ou superior. Não há dependências para instalar.
+- Internet no navegador, para carregar o mapa (Leaflet e blocos do OpenStreetMap).
 
 ## Uso rápido
 
 ```bash
-# Exterior (UF "zz"), com painel em http://localhost:3000, repetindo a cada 2 min
+# Araçatuba, com painel em http://localhost:3000, repetindo a coleta a cada 2 min
+node coletar-bus.mjs --web
+
+# Araçatuba, uma única passada, só CSV
+node coletar-bus.mjs
+
+# Outro escopo (ex.: exterior)
 node coletar-bus.mjs --uf zz --web
-
-# Todas as seções do exterior, uma única passada, só CSV
-node coletar-bus.mjs --uf zz
-
-# Um município de SP (Araçatuba, código TSE 61557), repetindo a cada 2 min
-node coletar-bus.mjs --uf sp --mun 61557 --loop 120
 
 # Ajuda
 node coletar-bus.mjs --help
 ```
 
+Sem `--uf`, o coletor usa `--uf sp --mun 61557` (Araçatuba). A coleta termina sozinha quando todas as seções forem baixadas. Com `--loop` ou `--web`, pode ser interrompida com `Ctrl+C`: o progresso fica salvo e a próxima execução continua de onde parou.
+
 ## Opções
 
 | Opção | Descrição |
 | --- | --- |
-| `--uf <sigla>` | UF a coletar (ex.: `sp`, `rj`, `zz` para exterior). **Obrigatória.** |
+| `--uf <sigla>` | UF a coletar (ex.: `sp`, `rj`, `zz` para exterior). Padrão: `sp` com `--mun 61557`. |
 | `--mun <códigos>` | Códigos TSE de município/cidade, separados por vírgula (ex.: `61557`). |
 | `--zona <zonas>` | Zonas eleitorais, separadas por vírgula (ex.: `11,299`). |
 | `--loop <segundos>` | Repete a coleta a cada N segundos (mínimo 60). Sem isso, faz uma passada só. |
 | `--concorrencia <n>` | Requisições simultâneas (padrão 3, máximo 8). |
 | `--reintentar <min>` | Minutos até verificar de novo uma seção que ainda não publicou o BU (padrão 15). |
-| `--out <pasta>` | Pasta de saída (padrão `./saida-bu`). |
+| `--out <pasta>` | Pasta de saída (padrão `./saida/<uf>-<município>`, ex.: `./saida/sp-61557`). |
 | `--sem-bu` | Não guarda os arquivos `.bu.dat` originais, só os CSVs. |
 | `--ambiente <nome>` | `oficial` (padrão) ou `simulado` (ambiente de testes do TSE). |
 | `--web` | Abre o painel no navegador e repete a coleta a cada 2 min. |
 | `--porta <n>` | Porta do painel (padrão 3000). |
 
-A coleta termina sozinha quando todas as seções do escopo forem baixadas. Com `--loop` ou `--web`, pode ser interrompida a qualquer momento com `Ctrl+C`: o progresso fica salvo e a próxima execução continua de onde parou.
+## O mapa e os bairros
+
+O BU traz apenas o número do local de votação. Para ligar cada seção a uma escola, um bairro e uma coordenada, o coletor usa `dados/locais-61557.json`, gerado a partir do cadastro oficial de locais de votação do TSE. Em Araçatuba são 63 locais, 493 seções e 50 bairros, todos com latitude e longitude.
+
+No painel:
+
+- Clique num candidato para ver no mapa e na tabela de bairros onde ele foi melhor.
+- **% dos válidos** (padrão) mostra a força do candidato em cada local, sem depender do tamanho da escola. **Votos** mostra o total absoluto.
+- O calor vai do local com menor ao de maior valor. Passe o mouse num ponto para ver escola, bairro, votos, percentual e quantas seções já têm BU. Pontos vazados ainda não têm BU coletado.
+- Clique num bairro da tabela para aproximar o mapa nele.
+
+> **Atenção:** cada ponto é o **local de votação**, no bairro cadastrado pelo TSE. O eleitor vota onde está inscrito, que nem sempre é o bairro onde mora. Os totais refletem **apenas as seções já coletadas**, não o resultado oficial completo.
+
+Para o **Senado** há 2 vagas em 2026: cada eleitor vota em até dois candidatos, então os votos válidos passam do número de votantes. Os percentuais são sobre o total de votos válidos para o cargo.
 
 ## Saída
 
-Tudo vai para a pasta `saida-bu/` (ou a indicada em `--out`):
+Tudo vai para `saida/sp-61557/` (ou a pasta indicada em `--out`):
 
 | Arquivo | Conteúdo |
 | --- | --- |
-| `secoes.csv` | Uma linha por seção coletada: município, zona, seção, local, aptos, comparecimento, abstenção, horários de abertura/encerramento/emissão do BU, recebimento no TSE, situação, nome do arquivo e hash. |
-| `votos.csv` | Uma linha por voto registrado em cada seção: cargo, tipo (nominal, legenda, branco, nulo), número, partido, candidato e quantidade. |
-| `resumo.csv` | Soma de todas as seções coletadas por cargo e candidato, com o percentual sobre os votos válidos. |
+| `secoes.csv` | Uma linha por seção coletada: zona, seção, local de votação, bairro, aptos, comparecimento, abstenção, horários de abertura/encerramento/emissão do BU, recebimento no TSE, situação, arquivo e hash. |
+| `votos.csv` | Uma linha por voto registrado em cada seção: bairro, cargo, tipo (nominal, legenda, branco, nulo), número, partido, candidato e quantidade. |
+| `bairros.csv` | Votos por cargo, bairro e candidato, com o percentual sobre os válidos do bairro. |
+| `resumo.csv` | Soma de todas as seções coletadas por cargo e candidato, com o percentual sobre os válidos. |
 | `estado.json` | Estado da coleta (seções já baixadas e pendentes). Permite retomar sem baixar tudo de novo. |
 | `bu/<uf>/<município>/*.bu.dat` | Arquivos originais dos BUs, como publicados pelo TSE (omitidos com `--sem-bu`). |
 
-Os CSVs usam `;` como separador e UTF-8 com BOM, então abrem direto no Excel em português.
+Os CSVs usam `;` como separador e UTF-8 com BOM, então abrem direto no Excel em português. O painel também tem links para baixá-los.
 
-> Os totais refletem **apenas as seções já coletadas**, não o resultado oficial completo.
+## Outros municípios
 
-## Painel web
+Para ter mapa e bairros em outro município, gere o arquivo de locais dele:
 
-Com `--web`, o script sobe um servidor local em `http://localhost:3000` que mostra:
+1. Baixe `eleitorado_local_votacao_2026.zip` em [dados abertos do TSE](https://cdn.tse.jus.br/estatistica/sead/odsele/eleitorado_locais_votacao/eleitorado_local_votacao_2026.zip) e descompacte.
+2. Rode, com o CSV da UF e o código TSE do município:
 
-- progresso da coleta (seções coletadas / total) e status do próximo ciclo;
-- totais por cargo, com percentual dos votos válidos;
-- tabela por município, com os mais votados no cargo principal;
-- detalhes de cada seção (votos por cargo, horários e hash do BU);
-- links para baixar `resumo.csv`, `secoes.csv` e `votos.csv`.
+```bash
+node gerar-locais.mjs eleitorado_local_votacao_2026_SP.csv 61557
+```
 
-Se a porta estiver ocupada, use `--porta 3001` (ou outra).
+Isso cria `dados/locais-<código>.json`, que o coletor carrega automaticamente quando o município está no escopo.
 
 ## Limites de requisição do TSE
 
@@ -85,4 +108,5 @@ Evite aumentar muito o `--concorrencia`.
 1. Baixa a lista de seções da UF no arquivo de configuração do TSE e aplica os filtros de município e zona.
 2. Para cada seção, consulta o arquivo auxiliar (`-aux.json`) para saber se o BU já foi publicado e qual é o hash.
 3. Baixa o `.bu.dat`, decodifica a estrutura ASN.1/DER e extrai identificação da seção, horários, eleitores aptos, comparecimento e votos por cargo.
-4. Cruza os números com os nomes de candidatos, partidos e municípios publicados pelo TSE e gera os CSVs.
+4. Cruza os números com os nomes de candidatos e partidos publicados pelo TSE e com o arquivo de locais (escola, bairro, coordenadas).
+5. Soma por local, bairro e cargo, gera os CSVs e alimenta o painel.

@@ -1,0 +1,1193 @@
+{
+ "uf": "sp",
+ "mun": "61557",
+ "nome": "ARAÇATUBA",
+ "locais": [
+  {
+   "zona": "0011",
+   "local": "1015",
+   "nome": "EE PROFA LICOLINA VILELA REIS ALVES",
+   "endereco": "R LAURINDO CAETANO DE ANDRADE",
+   "bairro": "VILA ESTADIO",
+   "lat": -21.220795,
+   "lon": -50.4423307,
+   "secoes": [
+    "0195",
+    "0005",
+    "0116",
+    "0173",
+    "0006",
+    "0001",
+    "0007",
+    "0004",
+    "0003",
+    "0100",
+    "0002"
+   ]
+  },
+  {
+   "zona": "0011",
+   "local": "1023",
+   "nome": "EE PROFA PURCINA ELISA DE ALMEIDA",
+   "endereco": "R MADALENA LOURENCO BRUNO, 328",
+   "bairro": "JUSSARA",
+   "lat": -21.225545,
+   "lon": -50.45751,
+   "secoes": [
+    "0013",
+    "0015",
+    "0016",
+    "0010",
+    "0009",
+    "0188",
+    "0008",
+    "0012",
+    "0014",
+    "0011"
+   ]
+  },
+  {
+   "zona": "0011",
+   "local": "1031",
+   "nome": "EE PROF JOSE AUGUSTO LOPES BORGES",
+   "endereco": "R CRISTIANO OLSEN, 3525",
+   "bairro": "VILA NOVA",
+   "lat": -21.2147169,
+   "lon": -50.4598819,
+   "secoes": [
+    "0024",
+    "0021",
+    "0019",
+    "0023",
+    "0142",
+    "0172",
+    "0115",
+    "0096",
+    "0020",
+    "0022",
+    "0157",
+    "0197",
+    "0018"
+   ]
+  },
+  {
+   "zona": "0011",
+   "local": "1040",
+   "nome": "EMEF INDIO POTI",
+   "endereco": "AV. CUSSY DE ALMEIDA, 2448",
+   "bairro": "VILA CARVALHO",
+   "lat": -21.2131548,
+   "lon": -50.4557813,
+   "secoes": [
+    "0032",
+    "0114",
+    "0025",
+    "0031",
+    "0026",
+    "0082",
+    "0189",
+    "0028",
+    "0086",
+    "0029",
+    "0030",
+    "0027"
+   ]
+  },
+  {
+   "zona": "0011",
+   "local": "1058",
+   "nome": "EE MANOEL BENTO DA CRUZ",
+   "endereco": "R CARLOS GOMES, 732",
+   "bairro": "HIGIENOPOLIS",
+   "lat": -21.2115486,
+   "lon": -50.4439005,
+   "secoes": [
+    "0038",
+    "0078",
+    "0041",
+    "0040",
+    "0150",
+    "0168",
+    "0206",
+    "0085",
+    "0034",
+    "0042",
+    "0083",
+    "0037",
+    "0076",
+    "0043",
+    "0113",
+    "0035",
+    "0084",
+    "0167",
+    "0036",
+    "0199",
+    "0039",
+    "0033"
+   ]
+  },
+  {
+   "zona": "0011",
+   "local": "1066",
+   "nome": "EMEB CRISTIANO OLSEN",
+   "endereco": "R. BERNARDINO DE CAMPOS, 128",
+   "bairro": "CENTRO",
+   "lat": -21.2087388,
+   "lon": -50.4397786,
+   "secoes": [
+    "0044",
+    "0087",
+    "0045",
+    "0112",
+    "0190",
+    "0046",
+    "0048",
+    "0047"
+   ]
+  },
+  {
+   "zona": "0011",
+   "local": "1074",
+   "nome": "EMEB MONSENHOR VITOR RIBEIRO MAZZEI",
+   "endereco": "R. SAO PAULO, 694",
+   "bairro": "VILA MENDONCA",
+   "lat": -21.2091655,
+   "lon": -50.4317246,
+   "secoes": [
+    "0053",
+    "0049",
+    "0054",
+    "0079",
+    "0050",
+    "0111",
+    "0052",
+    "0051",
+    "0089"
+   ]
+  },
+  {
+   "zona": "0011",
+   "local": "1082",
+   "nome": "EE DR JOUBERT DE CARVALHO",
+   "endereco": "R PARA, 469",
+   "bairro": "JARDIM PAULISTA",
+   "lat": -21.2086393,
+   "lon": -50.4262446,
+   "secoes": [
+    "0056",
+    "0198",
+    "0175",
+    "0204",
+    "0058",
+    "0080",
+    "0057",
+    "0092",
+    "0055",
+    "0110"
+   ]
+  },
+  {
+   "zona": "0011",
+   "local": "1090",
+   "nome": "EE PROF JORGE CORREA",
+   "endereco": "R SAO PAULO, S/N",
+   "bairro": "JARDIM SUMARE",
+   "lat": -21.2117105,
+   "lon": -50.4318373,
+   "secoes": [
+    "0063",
+    "0095",
+    "0064",
+    "0145",
+    "0059",
+    "0158",
+    "0062",
+    "0120",
+    "0174",
+    "0061",
+    "0060",
+    "0196"
+   ]
+  },
+  {
+   "zona": "0011",
+   "local": "1104",
+   "nome": "UNIP - UNIVERSIDADE PAULISTA",
+   "endereco": "AVENIDA BAGUAÇU, 1.939",
+   "bairro": "ALVORADA",
+   "lat": -21.2229371,
+   "lon": -50.4251906,
+   "secoes": [
+    "0065",
+    "0132",
+    "0088",
+    "0070",
+    "0067",
+    "0081",
+    "0193",
+    "0068",
+    "0233",
+    "0154",
+    "0066",
+    "0069"
+   ]
+  },
+  {
+   "zona": "0011",
+   "local": "1112",
+   "nome": "EE PROF JOSE CANDIDO",
+   "endereco": "R RINTARO TAKAHASHI, 250",
+   "bairro": "HIGIENOPOLIS",
+   "lat": -21.2105966,
+   "lon": -50.4459667,
+   "secoes": [
+    "0073",
+    "0072",
+    "0169",
+    "0119",
+    "0071",
+    "0090"
+   ]
+  },
+  {
+   "zona": "0011",
+   "local": "1120",
+   "nome": "EMEF PROF FERNANDO GOMES DE CASTRO",
+   "endereco": "BAIRRO AGUA LIMPA - ZONA RURAL",
+   "bairro": "AGUA LIMPA",
+   "lat": -21.3389744,
+   "lon": -50.5223528,
+   "secoes": [
+    "0187"
+   ]
+  },
+  {
+   "zona": "0011",
+   "local": "1139",
+   "nome": "UNIDADE BÁSICA DE SAÚDE - UBS DA PRATA",
+   "endereco": "BAIRRO DA PRATA - ZONA RURAL",
+   "bairro": "PRATA",
+   "lat": -21.3587951,
+   "lon": -50.5741004,
+   "secoes": [
+    "0191"
+   ]
+  },
+  {
+   "zona": "0011",
+   "local": "1147",
+   "nome": "EMEB ANA DOS SANTOS BARROS",
+   "endereco": "R. SILVIO FAVARIN, 50",
+   "bairro": "CONJUNTO HABITACIONAL JOAO BATISTA BOTELHO",
+   "lat": -21.2099081,
+   "lon": -50.4104452,
+   "secoes": [
+    "0109",
+    "0136",
+    "0106",
+    "0097",
+    "0117",
+    "0152",
+    "0229",
+    "0093",
+    "0099"
+   ]
+  },
+  {
+   "zona": "0011",
+   "local": "1937",
+   "nome": "EMEF PROF FAUSTO PERRI",
+   "endereco": "RUA CONSELHEIRO CRISPINIANO, 550",
+   "bairro": "ALVORADA",
+   "lat": -21.2337807,
+   "lon": -50.4251296,
+   "secoes": [
+    "0163",
+    "0133",
+    "0202",
+    "0122",
+    "0227",
+    "0178",
+    "0105"
+   ]
+  },
+  {
+   "zona": "0011",
+   "local": "1945",
+   "nome": "EMEB PROF ANTONIO RODRIGUES MARTINS NETO",
+   "endereco": "R. ADOLF HECHT, 39",
+   "bairro": "CONJUNTO HABITACIONAL CLOVIS VALENTIN PICOLOTTO",
+   "lat": -21.2378805,
+   "lon": -50.4600354,
+   "secoes": [
+    "0131",
+    "0212",
+    "0151",
+    "0104",
+    "0171"
+   ]
+  },
+  {
+   "zona": "0011",
+   "local": "1953",
+   "nome": "EE PROFA MARIA DO CARMO LELIS",
+   "endereco": "R LIONS CLUB, S/N",
+   "bairro": "MORADA DOS NOBRES",
+   "lat": -21.2289729,
+   "lon": -50.46373,
+   "secoes": [
+    "0205",
+    "0108",
+    "0121",
+    "0170",
+    "0103",
+    "0200",
+    "0159",
+    "0141"
+   ]
+  },
+  {
+   "zona": "0011",
+   "local": "1961",
+   "nome": "EMEB PROF FLORIANO CAMARGO DE ARRUDA BRASIL",
+   "endereco": "R VINTE E OITO DE DEZEMBRO, 364",
+   "bairro": "GUANABARA",
+   "lat": -21.2198802,
+   "lon": -50.4631041,
+   "secoes": [
+    "0138",
+    "0180",
+    "0211",
+    "0102"
+   ]
+  },
+  {
+   "zona": "0011",
+   "local": "1970",
+   "nome": "EMEB PROF LEAO NOGUEIRA FILHO",
+   "endereco": "R. APORE, 186",
+   "bairro": "IPORA",
+   "lat": -21.2312456,
+   "lon": -50.4484228,
+   "secoes": [
+    "0101",
+    "0220",
+    "0130",
+    "0184",
+    "0156"
+   ]
+  },
+  {
+   "zona": "0011",
+   "local": "1988",
+   "nome": "UNIDADE BÁSICA DE SAÚDE - UBS DO BAIRRO JACUTINGA",
+   "endereco": "BAIRRO DA JACUTINGA - ZONA RURAL",
+   "bairro": "JACUTINGA",
+   "lat": -21.3000674,
+   "lon": -50.5702791,
+   "secoes": [
+    "0192"
+   ]
+  },
+  {
+   "zona": "0011",
+   "local": "1996",
+   "nome": "EMEF EUZA NEUZA MARCONDES LARIOS",
+   "endereco": "R MANOEL MARQUES DE SOUZA, 431",
+   "bairro": "CONJUNTO HABITACIONAL HILDA MANDARINO",
+   "lat": -21.2148877,
+   "lon": -50.4034669,
+   "secoes": [
+    "0164",
+    "0186",
+    "0213",
+    "0224",
+    "0218",
+    "0127",
+    "0228",
+    "0208",
+    "0194",
+    "0234",
+    "0135",
+    "0147",
+    "0155"
+   ]
+  },
+  {
+   "zona": "0011",
+   "local": "2003",
+   "nome": "EMEB LEDA APARECIDA LIMA MARTINS",
+   "endereco": "R. DR. JOAQUIM VILELA, 870",
+   "bairro": "CONJUNTO HABITACIONAL CLAUDIONOR CINTI",
+   "lat": -21.23125,
+   "lon": -50.4733272,
+   "secoes": [
+    "0149",
+    "0222",
+    "0203",
+    "0128",
+    "0182"
+   ]
+  },
+  {
+   "zona": "0011",
+   "local": "2011",
+   "nome": "EMEB LEONISIA DE CASTRO",
+   "endereco": "PRAÇA ANTONIO VIOL, 42",
+   "bairro": "VILA BANDEIRANTES",
+   "lat": -21.2137004,
+   "lon": -50.4428442,
+   "secoes": [
+    "0137",
+    "0126",
+    "0148",
+    "0179"
+   ]
+  },
+  {
+   "zona": "0011",
+   "local": "2020",
+   "nome": "EE PROF ARTHUR LEITE CARRIJO",
+   "endereco": "R AURELIANO VALADAO FURQUIM, 690",
+   "bairro": "UMUARAMA",
+   "lat": -21.2153921,
+   "lon": -50.4157237,
+   "secoes": [
+    "0166",
+    "0214",
+    "0223",
+    "0176",
+    "0125",
+    "0235",
+    "0153",
+    "0209",
+    "0139",
+    "0230"
+   ]
+  },
+  {
+   "zona": "0011",
+   "local": "2038",
+   "nome": "EE PROF ARY BOCUHY",
+   "endereco": "RUA ABEL SARTORI, 279",
+   "bairro": "CONJUNTO HABITACIONAL IVO TOZZI",
+   "lat": -21.2150481,
+   "lon": -50.3993377,
+   "secoes": [
+    "0161",
+    "0146",
+    "0232",
+    "0124",
+    "0236",
+    "0177",
+    "0217",
+    "0225",
+    "0207",
+    "0210"
+   ]
+  },
+  {
+   "zona": "0011",
+   "local": "2046",
+   "nome": "EMEB PROF MARIO DE MOURA",
+   "endereco": "R. SEVERINO COSMO ARAUJO, 560 B",
+   "bairro": "CONCORDIA I",
+   "lat": -21.2226458,
+   "lon": -50.4151234,
+   "secoes": [
+    "0165",
+    "0226",
+    "0185",
+    "0237",
+    "0216",
+    "0129"
+   ]
+  },
+  {
+   "zona": "0011",
+   "local": "2054",
+   "nome": "EMEB PROFA IBIS PEREIRA PAIVA",
+   "endereco": "R. MARCO MANFRINATI, 494",
+   "bairro": "JUSSARA",
+   "lat": -21.224674,
+   "lon": -50.4566024,
+   "secoes": [
+    "0181",
+    "0160",
+    "0134",
+    "0123",
+    "0221"
+   ]
+  },
+  {
+   "zona": "0011",
+   "local": "2062",
+   "nome": "EMEB PROFª NORMA GAZONI MARTINS",
+   "endereco": "RUA MANOEL DIONISIO, 460",
+   "bairro": "ICARAY",
+   "lat": -21.2265855,
+   "lon": -50.4485716,
+   "secoes": [
+    "0231",
+    "0183",
+    "0144",
+    "0215",
+    "0162"
+   ]
+  },
+  {
+   "zona": "0011",
+   "local": "2151",
+   "nome": "CEEJA - CENTRO ESTADUAL DE EDUCAÇÃO DE JOVENS E ADULTOS",
+   "endereco": "RUA AMÉRICA DO NORTE, S/N",
+   "bairro": "JUSSARA",
+   "lat": -21.2251977,
+   "lon": -50.4573623,
+   "secoes": [
+    "0140",
+    "0094",
+    "0098",
+    "0017",
+    "0077",
+    "0091"
+   ]
+  },
+  {
+   "zona": "0299",
+   "local": "1015",
+   "nome": "EE PROFª MARIA APARECIDA BALTHAZAR POÇO",
+   "endereco": "RUA CLARISMUNDO DE MELLO, 267",
+   "bairro": "MONTE CARLO",
+   "lat": -21.2049711,
+   "lon": -50.4623134,
+   "secoes": [
+    "0135",
+    "0002",
+    "0110",
+    "0003",
+    "0005",
+    "0004",
+    "0097",
+    "0127",
+    "0282",
+    "0233",
+    "0142",
+    "0124",
+    "0001"
+   ]
+  },
+  {
+   "zona": "0299",
+   "local": "1023",
+   "nome": "EMEB PROFª CARMÉLIA MELLO FONSECA",
+   "endereco": "RUA GUATEMALA, 740",
+   "bairro": "JARDIM ACLIMAÇÃO",
+   "lat": -21.2031846,
+   "lon": -50.4585524,
+   "secoes": [
+    "0008",
+    "0011",
+    "0010",
+    "0007",
+    "0006",
+    "0012",
+    "0112",
+    "0009"
+   ]
+  },
+  {
+   "zona": "0299",
+   "local": "1031",
+   "nome": "EMEB PROF. DARCY FONTANELLI",
+   "endereco": "RUA JOSÉ CAETANO RUAS, 1205",
+   "bairro": "JARDIM DAS PALMEIRAS",
+   "lat": -21.2015029,
+   "lon": -50.4644858,
+   "secoes": [
+    "0017",
+    "0258",
+    "0015",
+    "0016",
+    "0013",
+    "0102",
+    "0113",
+    "0014",
+    "0019",
+    "0018"
+   ]
+  },
+  {
+   "zona": "0299",
+   "local": "1040",
+   "nome": "EE NILCE MAIA SOUTO MELO",
+   "endereco": "RUA HONDURAS, 22",
+   "bairro": "VILA INDUSTRIAL",
+   "lat": -21.2066442,
+   "lon": -50.4542529,
+   "secoes": [
+    "0024",
+    "0260",
+    "0020",
+    "0141",
+    "0114",
+    "0022",
+    "0103",
+    "0023",
+    "0021"
+   ]
+  },
+  {
+   "zona": "0299",
+   "local": "1058",
+   "nome": "EE DR. CLÓVIS DE ARRUDA CAMPOS",
+   "endereco": "RUA AUGUSTO KELLER, 139",
+   "bairro": "AMIZADE",
+   "lat": -21.1886513,
+   "lon": -50.4525214,
+   "secoes": [
+    "0036",
+    "0026",
+    "0038",
+    "0037",
+    "0034",
+    "0030",
+    "0040",
+    "0027",
+    "0032",
+    "0035",
+    "0041",
+    "0025",
+    "0126",
+    "0031",
+    "0039",
+    "0033",
+    "0029",
+    "0028"
+   ]
+  },
+  {
+   "zona": "0299",
+   "local": "1066",
+   "nome": "EE VANIOLÊ DIONYSIO MARQUES PAVAN",
+   "endereco": "RUA VER. ALDO CAMPOS, 2539",
+   "bairro": "PLANALTO",
+   "lat": -21.18674693,
+   "lon": -50.4590674,
+   "secoes": [
+    "0048",
+    "0137",
+    "0046",
+    "0044",
+    "0042",
+    "0049",
+    "0043",
+    "0047",
+    "0045",
+    "0122"
+   ]
+  },
+  {
+   "zona": "0299",
+   "local": "1074",
+   "nome": "EE GENÉSIO DE ASSIS",
+   "endereco": "RUA VER. ALDO CAMPOS, 870",
+   "bairro": "PARAÍSO",
+   "lat": -21.1973982,
+   "lon": -50.4475057,
+   "secoes": [
+    "0050",
+    "0055",
+    "0051",
+    "0098",
+    "0054",
+    "0056",
+    "0057",
+    "0053",
+    "0147",
+    "0052",
+    "0115"
+   ]
+  },
+  {
+   "zona": "0299",
+   "local": "1082",
+   "nome": "EE LUIZ GAMA",
+   "endereco": "RUA RUBIÃO JÚNIOR, 214",
+   "bairro": "SÃO JOAQUIM",
+   "lat": -21.20408629,
+   "lon": -50.44166547,
+   "secoes": [
+    "0104",
+    "0062",
+    "0061",
+    "0109",
+    "0116",
+    "0059",
+    "0140",
+    "0060",
+    "0058"
+   ]
+  },
+  {
+   "zona": "0299",
+   "local": "1090",
+   "nome": "EMEB PROF. JOAQUIM DIBO",
+   "endereco": "PRAÇA JOÃO XXIII S/N",
+   "bairro": "NOVO PARAÍSO",
+   "lat": -21.19357514,
+   "lon": -50.44942016,
+   "secoes": [
+    "0066",
+    "0063",
+    "0261",
+    "0117",
+    "0105",
+    "0139",
+    "0197",
+    "0099",
+    "0274",
+    "0161",
+    "0064",
+    "0065",
+    "0067"
+   ]
+  },
+  {
+   "zona": "0299",
+   "local": "1104",
+   "nome": "EE VITOR ANTÔNIO TRINDADE",
+   "endereco": "PRAÇA DIOGO JÚNIOR, 500",
+   "bairro": "SANTANA",
+   "lat": -21.1980576,
+   "lon": -50.4334784,
+   "secoes": [
+    "0081",
+    "0085",
+    "0074",
+    "0255",
+    "0071",
+    "0082",
+    "0084",
+    "0073",
+    "0070",
+    "0068",
+    "0083",
+    "0080",
+    "0069",
+    "0086",
+    "0075",
+    "0077",
+    "0076",
+    "0079",
+    "0078",
+    "0072",
+    "0235"
+   ]
+  },
+  {
+   "zona": "0299",
+   "local": "1112",
+   "nome": "EE SILVESTRE AUGUSTO DO NASCIMENTO",
+   "endereco": "RUA POTYGUARA, 340",
+   "bairro": "ENGENHEIRO TAVEIRA",
+   "lat": -21.1514401,
+   "lon": -50.5045255,
+   "secoes": [
+    "0149",
+    "0223",
+    "0087",
+    "0199",
+    "0088"
+   ]
+  },
+  {
+   "zona": "0299",
+   "local": "1155",
+   "nome": "EMEB PROF. LAURO BITTENCOURT",
+   "endereco": "RUA EMÍLIA SANTOS, 352",
+   "bairro": "TV",
+   "lat": -21.184469,
+   "lon": -50.4538753,
+   "secoes": [
+    "0123",
+    "0280",
+    "0108",
+    "0106",
+    "0157",
+    "0178",
+    "0145",
+    "0246",
+    "0096",
+    "0100",
+    "0165",
+    "0118"
+   ]
+  },
+  {
+   "zona": "0299",
+   "local": "1163",
+   "nome": "EE ALTINA MORAES SAMPAIO",
+   "endereco": "RUA BAURU, 50",
+   "bairro": "CONJUNTO HABITACIONAL NOSSA SENHORA APARECIDA",
+   "lat": -21.1959329,
+   "lon": -50.4338763,
+   "secoes": [
+    "0111",
+    "0176",
+    "0121",
+    "0136",
+    "0190",
+    "0156",
+    "0245",
+    "0101",
+    "0107",
+    "0125",
+    "0232",
+    "0159"
+   ]
+  },
+  {
+   "zona": "0299",
+   "local": "1171",
+   "nome": "EMEB PROFª FRANCISCA DE ARRUDA FERNANDES",
+   "endereco": "RUA AVIAÇÃO, 729",
+   "bairro": "AVIAÇÃO",
+   "lat": -21.1959452,
+   "lon": -50.4339632,
+   "secoes": [
+    "0129",
+    "0198",
+    "0191",
+    "0168",
+    "0158",
+    "0134",
+    "0265",
+    "0208",
+    "0138",
+    "0169"
+   ]
+  },
+  {
+   "zona": "0299",
+   "local": "1180",
+   "nome": "EE ABRANCHE JOSÉ",
+   "endereco": "RUA JOAQUIM HENRIQUE DE OLIVEIRA, S/N",
+   "bairro": "IPANEMA",
+   "lat": -21.1786105,
+   "lon": -50.4481467,
+   "secoes": [
+    "0128",
+    "0144",
+    "0281",
+    "0187",
+    "0244",
+    "0236",
+    "0225",
+    "0167",
+    "0204",
+    "0218"
+   ]
+  },
+  {
+   "zona": "0299",
+   "local": "1961",
+   "nome": "EE  EZEQUIEL BARBOSA",
+   "endereco": "RUA SERVILIANO SILVA JUNIOR, 410",
+   "bairro": "SÃO JOSE",
+   "lat": -21.1947737,
+   "lon": -50.4802167,
+   "secoes": [
+    "0216",
+    "0267",
+    "0205",
+    "0228",
+    "0276",
+    "0180",
+    "0131"
+   ]
+  },
+  {
+   "zona": "0299",
+   "local": "1970",
+   "nome": "EMEB PROF. JOSÉ MACHADO NETO",
+   "endereco": "RUA OTÁVIO COELHO, 185",
+   "bairro": "SÃO JOSE",
+   "lat": -21.1985239,
+   "lon": -50.4793424,
+   "secoes": [
+    "0162",
+    "0175",
+    "0130",
+    "0153",
+    "0242",
+    "0256",
+    "0278",
+    "0209"
+   ]
+  },
+  {
+   "zona": "0299",
+   "local": "2003",
+   "nome": "EMEB PROFª MARIA APARECIDA PIMENTEL FERRAZ",
+   "endereco": "RUA NOEL ROSA, 497",
+   "bairro": "ROSELE",
+   "lat": -21.1838681,
+   "lon": -50.4627694,
+   "secoes": [
+    "0251",
+    "0217",
+    "0148",
+    "0182",
+    "0200"
+   ]
+  },
+  {
+   "zona": "0299",
+   "local": "2011",
+   "nome": "EMEB PROF. JOSÉ HERCULANO DE ARAÚJO ORDINI",
+   "endereco": "RUA SEBASTIÃO DE OLIVEIRA MELLO, 145",
+   "bairro": "SÃO RAFAEL",
+   "lat": -21.162288,
+   "lon": -50.461678,
+   "secoes": [
+    "0151",
+    "0215",
+    "0253",
+    "0206",
+    "0179",
+    "0243",
+    "0273"
+   ]
+  },
+  {
+   "zona": "0299",
+   "local": "2020",
+   "nome": "EMEB PROF. LUIZ APARECIDO BERTOLUCCI",
+   "endereco": "RUA CANJIRO TAKEBE, 667",
+   "bairro": "MONTE CARLO",
+   "lat": -21.2055796,
+   "lon": -50.4653032,
+   "secoes": [
+    "0241",
+    "0164",
+    "0203",
+    "0150",
+    "0183"
+   ]
+  },
+  {
+   "zona": "0299",
+   "local": "2038",
+   "nome": "EMEB PROFª SUZANA ECHELON ORTIZ",
+   "endereco": "RUA EMILIA SANTOS, 1889",
+   "bairro": "PARQUE INDUSTRIAL",
+   "lat": -21.1939992,
+   "lon": -50.4660262,
+   "secoes": [
+    "0192",
+    "0226",
+    "0170",
+    "0263"
+   ]
+  },
+  {
+   "zona": "0299",
+   "local": "2046",
+   "nome": "EMEB PROFª MARIAZINHA SANCHES DE OLIVEIRA MILOCH",
+   "endereco": "RUA ANA NERY, 530",
+   "bairro": "IPANEMA",
+   "lat": -21.1865468,
+   "lon": -50.4435593,
+   "secoes": [
+    "0177",
+    "0234",
+    "0214",
+    "0146",
+    "0254",
+    "0202"
+   ]
+  },
+  {
+   "zona": "0299",
+   "local": "2054",
+   "nome": "EMEB  ALICE COUTO DE MORAES",
+   "endereco": "PRAÇA COMENDADOR JEREMIAS LUNARDELLI, 1018",
+   "bairro": "PARAÍSO",
+   "lat": -21.1974177,
+   "lon": -50.4468533,
+   "secoes": [
+    "0189",
+    "0249",
+    "0171",
+    "0181",
+    "0194"
+   ]
+  },
+  {
+   "zona": "0299",
+   "local": "2062",
+   "nome": "EMEB PROFª ERMELINDA GERALDA DA SILVA SOGA",
+   "endereco": "RUA JOSÉ RICO BELDA, 74",
+   "bairro": "PLANALTO",
+   "lat": -21.1914613,
+   "lon": -50.4569736,
+   "secoes": [
+    "0269",
+    "0264",
+    "0172",
+    "0212",
+    "0193",
+    "0188"
+   ]
+  },
+  {
+   "zona": "0299",
+   "local": "2070",
+   "nome": "EMEB PROFª MARIA ADELAIDE CAMARGO CARDOSO",
+   "endereco": "RUA JOSÉ MENDES GALVÃO, 45",
+   "bairro": "CONJUNTO HABITACIONAL ANTONIO PAGAN",
+   "lat": -21.1887807,
+   "lon": -50.4252495,
+   "secoes": [
+    "0222",
+    "0195",
+    "0196"
+   ]
+  },
+  {
+   "zona": "0299",
+   "local": "2097",
+   "nome": "UI/UIP-ARAÇÁ",
+   "endereco": "ESTRADA DO GOULART, KM 1,45",
+   "bairro": "FAZENDA DO ESTADO",
+   "lat": -21.1956265,
+   "lon": -50.4151489,
+   "secoes": [
+    "0229"
+   ]
+  },
+  {
+   "zona": "0299",
+   "local": "2100",
+   "nome": "EMEB ROSELI DE OLIVEIRA",
+   "endereco": "RUA ELZA ALMEIDA LEMOS 780",
+   "bairro": "JARDIM RESIDENCIAL ATLÂNTICO",
+   "lat": -21.1560462,
+   "lon": -50.4529353,
+   "secoes": [
+    "0227",
+    "0219",
+    "0247",
+    "0240"
+   ]
+  },
+  {
+   "zona": "0299",
+   "local": "2119",
+   "nome": "EMEB PROF. JOAQUIM FERNANDES",
+   "endereco": "RUA JUDITH MACHARETH, 405",
+   "bairro": "TV",
+   "lat": -21.1855177,
+   "lon": -50.4571104,
+   "secoes": [
+    "0272",
+    "0239",
+    "0268",
+    "0220"
+   ]
+  },
+  {
+   "zona": "0299",
+   "local": "2127",
+   "nome": "EMEB PROFª LEILA CRISTINA DE FREITAS MACHADO",
+   "endereco": "RUA PATRICIA MELO DA SILVA, 53",
+   "bairro": "PORTO REAL",
+   "lat": -21.1842735,
+   "lon": -50.4842831,
+   "secoes": [
+    "0238",
+    "0262",
+    "0231",
+    "0271"
+   ]
+  },
+  {
+   "zona": "0299",
+   "local": "2135",
+   "nome": "EMEB PROFª LOURDES REGINA DE SOUSA",
+   "endereco": "RUA NATALINO PEREIRA DA SILVA, 145",
+   "bairro": "VERDE PARQUE",
+   "lat": -21.1719013,
+   "lon": -50.4698923,
+   "secoes": [
+    "0257",
+    "0230",
+    "0237",
+    "0277"
+   ]
+  },
+  {
+   "zona": "0299",
+   "local": "2151",
+   "nome": "EMEB CAMILA TOMASHINSKY",
+   "endereco": "RUA BOLIVIA N 357",
+   "bairro": "VILA INDUSTRIAL",
+   "lat": -21.20643131,
+   "lon": -50.45597196,
+   "secoes": [
+    "0163",
+    "0184",
+    "0173",
+    "0250",
+    "0154",
+    "0201"
+   ]
+  },
+  {
+   "zona": "0299",
+   "local": "2160",
+   "nome": "EMEB PROFª HENNY FERRAZ HOMEM",
+   "endereco": "RUA NICOLAU DÉLLIA, 540",
+   "bairro": "IPANEMA",
+   "lat": -21.1812497,
+   "lon": -50.4457573,
+   "secoes": [
+    "0284",
+    "0290",
+    "0286"
+   ]
+  },
+  {
+   "zona": "0299",
+   "local": "2178",
+   "nome": "EMEB PROFª MARIA MERCEDES CASSIOLATTO DE SOUZA",
+   "endereco": "RUA ELZA DE ALMEIDA LEMOS, 925",
+   "bairro": "JARDIM RESIDENCIAL ATLÂNTICO",
+   "lat": -21.1545276,
+   "lon": -50.4525195,
+   "secoes": [
+    "0283",
+    "0288"
+   ]
+  },
+  {
+   "zona": "0299",
+   "local": "2232",
+   "nome": "EMEB PROFª HELEN MARGOT DE ASSIS",
+   "endereco": "RUA PAULO ROBERTO FERREIRA, Nº 78",
+   "bairro": "CONJUNTO HABITACIONAL ETHEOCLE TURRINI",
+   "lat": -21.1691261,
+   "lon": -50.4493128,
+   "secoes": [
+    "0207",
+    "0279",
+    "0186",
+    "0132",
+    "0155",
+    "0252",
+    "0166",
+    "0221"
+   ]
+  }
+ ]
+}
